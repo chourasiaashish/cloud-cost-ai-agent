@@ -1,0 +1,6 @@
+server,operatingSystem,vcpu,memory
+appserver1,Linux,2,4
+appserver2,Linux,2,8
+appserver3,Linux,4,8
+appserver4,Linux,4,16
+appserver5,Windows,4,16

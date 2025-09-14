@@ -1,0 +1,23 @@
+{
+  "actionGroup": "AzureCost",
+  "function": "get_ec2_cost",
+  "parameters": [
+    {
+      "name": "server",
+      "value": "server1"
+    },
+    {
+      "name": "operatingSystem",
+      "value": "Linux"
+    },
+    {
+      "name": "vcpu",
+      "value": "2"
+    },
+    {
+      "name": "memory",
+      "value": "4"
+    }
+  ],
+  "messageVersion": "1"
+}

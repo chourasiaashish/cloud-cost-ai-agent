@@ -1,0 +1,27 @@
+Create and activate venv:
+    python -m venv .venv
+    .venv\Scripts\activate
+C:\workspace\cloud-cost-expert-agent\.venv\Scripts\python.exe -m pip install --upgrade pip
+pip install websockets
+pip install uv  #uv is a lightweight Python package manager (by Astral).
+
+aws --version
+aws configure
+
+#Install aws-pricing-mcp-server globally (at C:\Users\AshishKChourasia\AppData\Roaming\uv\tools\awslabs-aws-pricing-mcp-server\Scripts)
+uv tool install awslabs.aws-pricing-mcp-server
+#check tools dir where it installed
+uv tool dir
+
+#run mcp server locally
+#uv tool run --from awslabs.aws-pricing-mcp-server@latest awslabs.aws-pricing-mcp-server
+#check process if server is running
+Get-Process | findstr aws-pricing
+
+#Since Bedrock Agents can’t directly talk to MCP (it expects HTTP/JSON), you need a proxy.Wrap MCP in an HTTP Proxy
+npx mcp-proxy C:\Users\AshishKChourasia\AppData\Roaming\uv\tools\awslabs-aws-pricing-mcp-server\Scripts\awslabs.aws-pricing-mcp-server.exe --port 8080
+starting server on port 8080
+
+python health_check.py
+python client.py
+
